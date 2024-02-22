@@ -12,13 +12,13 @@
 - term (string) internationalized
 - objectives  (string, richtext[ckeditor.toolbar='Tinny',ckeditor.customConfig='$context/modules/industrial/javascript/ckeditor/config/body.js']) internationalized
 - recommendation  (string, richtext[ckeditor.toolbar='Tinny',ckeditor.customConfig='$context/modules/industrial/javascript/ckeditor/config/body.js']) internationalized
-- riskIndicator (string, choicelist[resourceBundle])  autocreated < '1','2','3','4','5','6','7'
+- riskIndicator (string, choicelist[resourceBundle])  < '1','2','3','4','5','6','7'
 
 [fundmgmtnt:fund] > jnt:content, fundmgmtmix:fundsManagement, mix:title
 - fundName (string) internationalized mandatory
 - isin (string) mandatory
 - fundAssetClass (string, choicelist[resourceBundle]) = 'equity' mandatory autocreated < 'equity', 'fixed-income', 'alternative', 'multi-asset'
-- fundCurrency (string, choicelist[resourceBundle]) mandatory autocreated < 'USD','GBP','EUR','CHF','NOK','SGD','JPY','RMB'
+- fundCurrency (string, choicelist[resourceBundle]) mandatory < 'USD','GBP','EUR','CHF','NOK','SGD','JPY','RMB'
 - fundNav (double)
 - fundNavDate (date)
 

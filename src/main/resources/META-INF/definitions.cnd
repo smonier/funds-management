@@ -1,0 +1,30 @@
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<fundmgmtnt = 'http://modules.se.jahia.org/fundmanagement/nt/1.0'>
+<fundmgmtmix = 'http://modules.se.jahia.org/fundmanagement/mix/1.0'>
+
+[fundmgmtmix:fundsManagement] > jmix:droppableContent, jmix:visibleInContentTree, jmix:editorialContent mixin
+
+
+[fundmgmtmix:fundDescription] mixin
+ extends = fundmgmtnt:fund
+- type (string) internationalized
+- term (string) internationalized
+- objectives  (string, richtext[ckeditor.toolbar='Tinny',ckeditor.customConfig='$context/modules/industrial/javascript/ckeditor/config/body.js']) internationalized
+- recommendation  (string, richtext[ckeditor.toolbar='Tinny',ckeditor.customConfig='$context/modules/industrial/javascript/ckeditor/config/body.js']) internationalized
+- riskIndicator (string, choicelist[resourceBundle])  autocreated < '1','2','3','4','5','6','7'
+
+[fundmgmtnt:fund] > jnt:content, fundmgmtmix:fundsManagement, mix:title
+- fundName (string) internationalized mandatory
+- isin (string) mandatory
+- fundAssetClass (string, choicelist[resourceBundle]) = 'equity' mandatory autocreated < 'equity', 'fixed-income', 'alternative', 'multi-asset'
+- fundCurrency (string, choicelist[resourceBundle]) mandatory autocreated < 'USD','GBP','EUR','CHF','NOK','SGD','JPY','RMB'
+- fundNav (double)
+- fundNavDate (date)
+
+[fundmgmtnt:getFund] > jnt:content, jmix:list, mix:title, fundmgmtmix:fundsManagement, jmix:cache
+  - teaser (string, richtext[ckeditor.toolbar='Tinny',ckeditor.customConfig='$context/modules/design-system-gouv-fr/javascript/ckeditor/config/small.js']) internationalized
+  - maxItems (long) = 3 indexed=no
+  - folder (weakreference, picker[type='contentfolder'])
+  - filter (weakreference, category[autoSelectParent=false])
+  - j:subNodesView (string, choicelist[templates=dsgouvnt:content,resourceBundle,image]) nofulltext itemtype = layout

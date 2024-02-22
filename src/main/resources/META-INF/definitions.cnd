@@ -28,3 +28,5 @@
   - folder (weakreference, picker[type='contentfolder'])
   - filter (weakreference, category[autoSelectParent=false])
   - j:subNodesView (string, choicelist[templates=dsgouvnt:content,resourceBundle,image]) nofulltext itemtype = layout
+
+  [fundmgmtnt:fundsList] > jnt:content, fundmgmtmix:fundsManagement, mix:title

@@ -30,3 +30,6 @@
   - j:subNodesView (string, choicelist[templates=dsgouvnt:content,resourceBundle,image]) nofulltext itemtype = layout
 
   [fundmgmtnt:fundsList] > jnt:content, fundmgmtmix:fundsManagement, mix:title
+  - jsonUrl (string) = "https://"
+  - csvFile (weakreference, picker[type='jnt:file'])
+
